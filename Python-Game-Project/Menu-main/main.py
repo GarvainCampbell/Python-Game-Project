@@ -141,5 +141,5 @@ def main_menu():
                     sys.exit()
 
         pygame.display.update()
-#test
+
 main_menu()

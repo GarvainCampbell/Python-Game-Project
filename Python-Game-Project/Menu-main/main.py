@@ -1,7 +1,6 @@
 # Importing packages for the main menu
 import pygame, sys
 from button import Button
-from subprocess import *
 
 pygame.init()
 
@@ -17,33 +16,32 @@ def get_font(size): # Returns Press-Start-2P in the desired size
 
 def game1():
     while True:
-        # GAME1_MOUSE_POS = pygame.mouse.get_pos()
-        #
-        # SCREEN.fill("black")
-        #
-        # GAME1_TEXT = get_font(45).render("This is the OPTIONS screen.", True, "Black")
-        # GAME1_RECT = GAME1_TEXT.get_rect(center=(640, 260))
-        # SCREEN.blit(GAME1_TEXT, GAME1_RECT)
-        #
-        # GAME1_BACK = Button(image=None, pos=(640, 460),
-        #                       text_input="BACK", font=get_font(75), base_color="Black", hovering_color="Green")
-        #
-        # GAME1_BACK.changeColor(GAME1_MOUSE_POS)
-        # GAME1_BACK.update(SCREEN)
-        #
-        # GAME1_BACK.changeColor(GAME1_MOUSE_POS)
-        # GAME1_BACK.update(SCREEN)
-        #
-        # for event in pygame.event.get():
-        #     if event.type == pygame.QUIT:
-        #         pygame.quit()
-        #         sys.exit()
-        #     if event.type == pygame.MOUSEBUTTONDOWN:
-        #         if GAME1_BACK.checkForInput(GAME1_MOUSE_POS):
-        #             main_menu()
-        #
-        # pygame.display.update()
-        result = snl()
+        GAME1_MOUSE_POS = pygame.mouse.get_pos()
+
+        SCREEN.fill("black")
+
+        GAME1_TEXT = get_font(45).render("This is the OPTIONS screen.", True, "Black")
+        GAME1_RECT = GAME1_TEXT.get_rect(center=(640, 260))
+        SCREEN.blit(GAME1_TEXT, GAME1_RECT)
+
+        GAME1_BACK = Button(image=None, pos=(640, 460),
+                              text_input="BACK", font=get_font(75), base_color="Black", hovering_color="Green")
+
+        GAME1_BACK.changeColor(GAME1_MOUSE_POS)
+        GAME1_BACK.update(SCREEN)
+
+        GAME1_BACK.changeColor(GAME1_MOUSE_POS)
+        GAME1_BACK.update(SCREEN)
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if GAME1_BACK.checkForInput(GAME1_MOUSE_POS):
+                    main_menu()
+
+        pygame.display.update()
     
 def game2():
     while True:

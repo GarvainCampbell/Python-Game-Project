@@ -111,7 +111,7 @@ def main_menu():
         MENU_RECT = MENU_TEXT.get_rect(center=(640, 100))
 
         Game1_BUTTON = Button(image=pygame.image.load("assets/Options Rect.png"), pos=(640, 230),
-                            text_input="S&L", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
+                            text_input="Game 1", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
         Game2_BUTTON = Button(image=pygame.image.load("assets/Options Rect.png"), pos=(640, 350),
                             text_input="Game 2", font=get_font(75), base_color="#d7fcd4", hovering_color="White")
         Game3_BUTTON = Button(image=pygame.image.load("assets/Options Rect.png"), pos=(640, 470),

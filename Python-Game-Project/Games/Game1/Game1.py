@@ -50,7 +50,6 @@ intbg2=pygame.image.load("intropic2.jpg")
 intbg3=pygame.image.load("intropic3.jpg")
 intbg4=pygame.image.load("intropic4.jpg")
 intbg5=pygame.image.load("intropic5.jpg")
-credits1=pygame.image.load("credits.jpg")
 
 pygame.mixer.music.load("music.wav")
 snakesound=pygame.mixer.Sound("snake.wav")
@@ -287,22 +286,6 @@ def intro():
                 return
         pygame.display.update()
 
-def credit():
-    while True:
-        GD.blit(credits1,(0,0))
-        for event in pygame.event.get():
-            if event.type== pygame.KEYDOWN:
-                if event.key== pygame.K_ESCAPE:
-                    Quit()
-        #mouse pos
-        mouse=pygame.mouse.get_pos()
-        click=pygame.mouse.get_pressed()
-        if button("Back",mouse[0],mouse[1],w/2-100,700,200,50,red,b_red,25,20):
-            main()
-            
-        pygame.display.update()
-        
-    
 
 
     
@@ -335,8 +318,6 @@ def main():
             pygame.mixer.music.pause()
         if button2("Play Music",mouse[0],mouse[1],1166,75,200,50,purple,b_purple,25):
             pygame.mixer.music.unpause()
-        if button2("Credits",mouse[0],mouse[1],1166,150,200,50,purple,b_purple,25):
-            credit()
         
         pygame.display.update()
 

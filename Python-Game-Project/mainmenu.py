@@ -88,11 +88,11 @@ def main():
         menu = Menu()
         if menu.game_number == 1:
              # CHANGE Subprocess paths. Check to see if it works on MAC
-            subprocess.Popen("C:\\Users\\joelw\Downloads\\Snake and Ladder (executable, code, and game files)\\Game.exe")
+            subprocess.Popen("..\\Python-Game-Project\\Games\\Game1\\main.exe")
         if menu.game_number == 2:
-            subprocess.Popen("C:\\Users\\joelw\Downloads\\Snake and Ladder (executable, code, and game files)\\Game.exe")
+            subprocess.Popen("..\\Python-Game-Project\\Games\\Game 2\\main.exe")
         if menu.game_number == 3:
-            subprocess.Popen("C:\\Users\\joelw\Downloads\\Snake and Ladder (executable, code, and game files)\\Game.exe")
+            subprocess.Popen("..\\Python-Game-Project\\Games\\Game3\\")
         pygame.display.update()
 
 if __name__ == "__main__":

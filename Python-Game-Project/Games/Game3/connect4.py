@@ -204,6 +204,7 @@ def play():
 
                     if game_over:
                         pygame.time.wait(3000)
+                    show_go_screen()
 
     mainGame()
     #pygame.display.update()

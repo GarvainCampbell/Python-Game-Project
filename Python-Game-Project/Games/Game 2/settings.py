@@ -11,7 +11,7 @@ class Settings:
         """Initialize the game's static settings."""
         # Screen settings
         # This line is needed to avoid error: No video mode has been set
-        self.screen = pygame.display.set_mode((0, 0))
+        self.screen = pygame.display.set_mode((1280, 800))
         self.screen_width = resolution_width
         self.screen_height = resolution_height
         self.bg_image = pygame.image.load("images/background_2.png").convert()

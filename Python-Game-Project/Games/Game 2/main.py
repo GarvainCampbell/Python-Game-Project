@@ -26,8 +26,7 @@ class SpaceImpact:
         pygame.init()
 
         self.settings = Settings()
-        self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height),
-                                              HWSURFACE | DOUBLEBUF | RESIZABLE)
+        self.screen = pygame.display.set_mode((1366,768))
         pygame.display.set_caption("Space Impact")
 
         self.ship = Ship(self)

@@ -2,15 +2,15 @@ import pygame
 from pygame.locals import *
 import sys
 sys.path.append("..\\Python-Game-Project\\Games\\Game1\\Game1.py") # for game one
-sys.path.append("..\\Python-Game-Project\\Games\\Game 2\\space-impact-master\\space-impact-master\\space_impact.py") # for game two
+sys.path.append("Games/Game2\\space-impact-master\\space-impact-master\\space_impact.py") # for game two
 sys.path.append("..\\Python-Game-Project\\Games\\Game3\\cnt4_menu.py") # for game three
 import subprocess
 
 pygame.init()
-win = pygame.display.set_mode((700, 500))
+win = pygame.display.set_mode((1280, 700))
 
 snake_ladder = pygame.image.load(".\\Assets\\Play Snake and Ladders.png")
-tictactoe = pygame.image.load(".\\Assets\\Play Tic Tac Toe.png")
+connect4 = pygame.image.load(".\\Assets\\Play Connect 4.png")
 space_impact = pygame.image.load(".\\Assets\\Play Space Impact.png")
 quit_button = pygame.image.load(".\\Assets\\QUIT.png")
 bg = pygame.image.load(".\\Assets\\Background.jpg")
@@ -43,9 +43,10 @@ class Button:
 
 class Menu:
     def __init__(self):
-        self.game_one = Button(350, 100, snake_ladder, 1)
-        self.game_two = Button(350, 200, tictactoe, 1)
-        self.game_three = Button(350, 200, space_impact, 1)
+        self.game_one = Button(650, 150, snake_ladder, 1)
+        self.game_two = Button(650, 300, space_impact, 1)
+        self.game_three = Button(650, 450, connect4, 1)
+        self.quit = Button(650, 600, quit_button, 1)
         # REPLACE oneplayer, toplayer stuff with button images of your own
         self.game_number = self.game_select()
 
@@ -57,6 +58,7 @@ class Menu:
         self.game_one.draw()
         self.game_two.draw()
         self.game_three.draw()
+        self.quit.draw()
 
         selecting_game = True
         while selecting_game:
@@ -67,12 +69,16 @@ class Menu:
                 first_game = self.game_one.check_click(event)
                 second_game = self.game_two.check_click(event)
                 third_game = self.game_three.check_click(event)
+                quit_game = self.quit.check_click(event)
                 if first_game:
                     return 1
                 elif second_game:
                     return 2
                 elif third_game:
                     return 3
+                elif quit_game:
+                    pygame.quit()
+                    sys.exit()
             pygame.display.update()
 
 def main():
@@ -87,12 +93,12 @@ def main():
                 sys.exit()
         menu = Menu()
         if menu.game_number == 1:
-             # CHANGE Subprocess paths. Check to see if it works on MAC
-            subprocess.Popen("..\\Python-Game-Project\\Games\\Game1\\main.exe")
+             # Calling each exe program for the game
+            subprocess.Popen("Games\\Game1\\main.exe", cwd='Games\\Game1')
         if menu.game_number == 2:
-            subprocess.Popen("..\\Python-Game-Project\\Games\\Game 2\\main.exe")
+            subprocess.Popen("Games\\Game2\\main.exe", cwd='Games\\Game2')
         if menu.game_number == 3:
-            subprocess.Popen("..\\Python-Game-Project\\Games\\Game3\\")
+            subprocess.Popen("Games\\Game3\\main.exe", cwd='Games\\Game3')
         pygame.display.update()
 
 if __name__ == "__main__":

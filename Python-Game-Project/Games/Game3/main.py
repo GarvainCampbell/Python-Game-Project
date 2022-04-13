@@ -1,5 +1,5 @@
-import pygame, sys
-import numpy as np
+import pygame
+import sys
 
 pygame.init()
 
@@ -41,7 +41,7 @@ pygame.display.set_caption("Menu")
 BG = pygame.image.load("assets/bg.jpeg")
 
 
-def get_font(size):  # Returns Press-Start-2P in the desired size
+def get_font(size): #Returns Press-Start-2P in the desired size
     return pygame.font.Font("assets/font.ttf", size)
 
 
@@ -92,14 +92,14 @@ def play():
                         c] == piece:
                         return True
 
-            # Check positively sloped diaganols
+            # Check positively sloped diagonals
             for c in range(COLUMN_COUNT - 3):
                 for r in range(ROW_COUNT - 3):
                     if board[r][c] == piece and board[r + 1][c + 1] == piece and board[r + 2][c + 2] == piece and \
                             board[r + 3][c + 3] == piece:
                         return True
 
-            # Check negatively sloped diaganols
+            # Check negatively sloped diagonals
             for c in range(COLUMN_COUNT - 3):
                 for r in range(3, ROW_COUNT):
                     if board[r][c] == piece and board[r - 1][c + 1] == piece and board[r - 2][c + 2] == piece and \

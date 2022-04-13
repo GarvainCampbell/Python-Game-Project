@@ -3,7 +3,7 @@ from pygame.locals import *
 import sys
 sys.path.append("..\\Python-Game-Project\\Games\\Game1\\Game1.py") # for game one
 sys.path.append("..\\Python-Game-Project\\Games\\Game 2\\space-impact-master\\space-impact-master\\space_impact.py") # for game two
-sys.path.append("..\\Python-Game-Project\\Games\\Game3\\cnt4_menu.py") # for game three
+sys.path.append("..\\Python-Game-Project\\Games\\Game3\\main.py") # for game three
 import subprocess
 
 pygame.init()
